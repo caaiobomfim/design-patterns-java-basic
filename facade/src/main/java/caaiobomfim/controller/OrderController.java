@@ -1,5 +1,10 @@
-package caaiobomfim;
+package caaiobomfim.controller;
 
+import caaiobomfim.dto.Request;
+import caaiobomfim.service.InventoryManager;
+import caaiobomfim.service.Notifier;
+import caaiobomfim.service.PaymentProcessor;
+import caaiobomfim.service.ShippingService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

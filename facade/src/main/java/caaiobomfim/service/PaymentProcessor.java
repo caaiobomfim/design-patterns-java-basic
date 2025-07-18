@@ -1,4 +1,4 @@
-package caaiobomfim;
+package caaiobomfim.service;
 
 import org.springframework.stereotype.Service;
 

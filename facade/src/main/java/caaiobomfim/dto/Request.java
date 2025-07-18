@@ -1,4 +1,4 @@
-package caaiobomfim;
+package caaiobomfim.dto;
 
 public record Request(
        Float amount,

@@ -1,8 +1,7 @@
-package caaiobomfim;
+package caaiobomfim.service;
 
+import caaiobomfim.dto.Request;
 import org.springframework.stereotype.Service;
-
-import java.util.Map;
 
 @Service
 public class ShippingService {
