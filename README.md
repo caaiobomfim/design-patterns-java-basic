@@ -6,7 +6,7 @@ Este repositório contém implementações práticas e básicas dos principais *
 
 ## ✅ Padrões implementados
 
-- [x] **Facade** – Abstrair e encapsular complexidade, regras de negócio e fluxo do código para melhorar código do cliente.
+- [x] **Facade** – Extrair e encapsular complexidade, regras de negócio e fluxo do código para melhorar código do cliente.
 - [ ] Singleton
 - [ ] Strategy
 - [ ] Observer
