@@ -6,7 +6,7 @@ Este repositório contém implementações práticas e básicas dos principais *
 
 ## ✅ Padrões implementados
 
-[**Facade**](./facade/README.md) – Extrair e encapsular complexidade, regras de negócio e fluxo do código para melhorar código do cliente.
+[**Facade**](./facade) – Extrair e encapsular complexidade, regras de negócio e fluxo do código para melhorar código do cliente.
 - [ ] Singleton
 - [ ] Strategy
 - [ ] Observer
