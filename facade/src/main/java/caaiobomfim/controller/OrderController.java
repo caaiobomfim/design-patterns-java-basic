@@ -1,10 +1,7 @@
 package caaiobomfim.controller;
 
+import caaiobomfim.OrderFacade;
 import caaiobomfim.dto.Request;
-import caaiobomfim.service.InventoryManager;
-import caaiobomfim.service.Notifier;
-import caaiobomfim.service.PaymentProcessor;
-import caaiobomfim.service.ShippingService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,30 +15,16 @@ import java.util.Map;
 @RequestMapping("/api/order")
 public class OrderController {
 
-    private final PaymentProcessor paymentProcessor;
-    private final Notifier notifier;
-    private final InventoryManager inventoryManager;
-    private final ShippingService shippingService;
+    private final OrderFacade orderFacade;
 
-    public OrderController(PaymentProcessor paymentProcessor, Notifier notifier, InventoryManager inventoryManager, ShippingService shippingService) {
-        this.paymentProcessor = paymentProcessor;
-        this.notifier = notifier;
-        this.inventoryManager = inventoryManager;
-        this.shippingService = shippingService;
+    public OrderController(OrderFacade orderFacade) {
+        this.orderFacade = orderFacade;
     }
 
     @PostMapping
     public ResponseEntity<Map<String, String>> createOrder(@RequestBody Request request) {
 
-        Float amount = request.amount();
-        String email = request.email();
-        String productId = request.productId();
-        Integer quantity = request.quantity();
-
-        paymentProcessor.processPayment(amount);
-        notifier.sendConfirmation(email);
-        inventoryManager.updateStock(productId, quantity);
-        shippingService.initiateShipping(request);
+        orderFacade.processOrder(request);
 
         Map<String, String> response = new HashMap<>();
         response.put("message", "Pedido realizado com sucesso");
