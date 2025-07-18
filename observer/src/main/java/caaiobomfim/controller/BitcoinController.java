@@ -24,6 +24,7 @@ public class BitcoinController {
     @PostMapping("/update")
     public String updatePrice() {
         float latestPrice = binanceAPI.getLastPrice();
+
         bitcoin.setPrice(latestPrice);
 
         return "New price defined: " + bitcoin.getPrice();
