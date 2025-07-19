@@ -9,12 +9,12 @@ Ele é útil quando temos várias classes que seguem uma **mesma sequência de p
 
 Imagine que trabalhamos em uma empresa de mineração de dados. Os usuários fazem uploads de arquivos `.doc`, `.csv` e `.pdf`, e o sistema:
 
-1. Abre o arquivo
-2. Extrai os dados
-3. Faz o parse dos dados
-4. Analisa os dados
-5. Gera um relatório
-6. Envia esse relatório
+1. Abre o arquivo.
+2. Extrai os dados.
+3. Faz o parse dos dados.
+4. Analisa os dados.
+5. Gera um relatório.
+6. Envia esse relatório.
 
 Inicialmente, criamos uma classe `DocDataMiner` (v1.0), depois `CSVDataMiner` (v2.0) e por fim `PDFDataMiner` (v3.0). No entanto, todas essas classes seguiam a **mesma estrutura** no método `mine()` e apenas mudavam em como extraíam e parseavam os dados.
 
@@ -82,11 +82,11 @@ public class DocDataMiner extends DataMiner {
 ```
 
 ## 🔄 Benefícios obtidos com o padrão Template Method
-- ✅ Evita duplicação de código
-- ✅ Garante a ordem de execução dos métodos
-- ✅ Facilita manutenção e adição de novos formatos
-- ✅ Centraliza lógica comum na superclasse
-- ⚠️ Requer cuidado com uso excessivo de herança
+- ✅ Evita duplicação de código.
+- ✅ Garante a ordem de execução dos métodos.
+- ✅ Facilita manutenção e adição de novos formatos.
+- ✅ Centraliza lógica comum na superclasse.
+- ⚠️ Requer cuidado com uso excessivo de herança.
 
 ## 🧱 Considerações finais
 O Template Method é útil quando já temos duplicações claras e uma estrutura bem definida de passos. Não é recomendado aplicá-lo prematuramente, sem necessidade real. Ele deve ser utilizado como uma solução para um problema, e não como ponto de partida do projeto.
