@@ -100,6 +100,6 @@ bitcoin.addObserver(new NewsPlatform());
 - 🚪 Aderência ao OCP (Open/Closed Principle): novas funcionalidades via novas classes, sem modificar código existente.
 
 ## 🔗 Referência
-Documentação completa: refactoring.guru/design-patterns/observer
+Documentação completa: https://refactoring.guru/design-patterns/observer
 
 ---
