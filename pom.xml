@@ -11,6 +11,7 @@
     <modules>
         <module>facade</module>
         <module>observer</module>
+        <module>template-method</module>
     </modules>
 
     <properties>
