@@ -39,6 +39,7 @@ git clone https://github.com/seu-usuario/design-patterns-java-basic.git
 
 - GoF – Design Patterns: Elements of Reusable Object-Oriented Software.
 - Refactoring Guru – Facade (https://refactoring.guru/pt-br/design-patterns/facade).
+- Refactoring Guru – Observer (https://refactoring.guru/pt-br/design-patterns/observer).
 
 ## 📌 Objetivo
 
