@@ -8,6 +8,7 @@ Este repositório contém implementações práticas e básicas dos principais *
 
 - [**Facade**](./facade): Extrair e encapsular complexidade, regras de negócio e fluxo do código para melhorar código do cliente.
 - [**Observer**](./observer): Permitir que objetos observadores reajam às mudanças de estado de outro objeto, como uma forma de programação orientada à eventos.
+- [**Template Method**](./template-method): Útil quando temos duplicações de código e uma sequência de passos bem definidos.
 
 - [ ] Singleton
 - [ ] Strategy
@@ -17,7 +18,6 @@ Este repositório contém implementações práticas e básicas dos principais *
 - [ ] Adapter
 - [ ] Decorator
 - [ ] Command
-- [ ] Template Method
 - [ ] Chain of Responsibility
 
 Outros:
@@ -40,6 +40,7 @@ git clone https://github.com/seu-usuario/design-patterns-java-basic.git
 - GoF – Design Patterns: Elements of Reusable Object-Oriented Software.
 - Refactoring Guru – Facade (https://refactoring.guru/pt-br/design-patterns/facade).
 - Refactoring Guru – Observer (https://refactoring.guru/pt-br/design-patterns/observer).
+- Refactoring Guru – Template Method (https://refactoring.guru/design-patterns/template-method).
 
 ## 📌 Objetivo
 
