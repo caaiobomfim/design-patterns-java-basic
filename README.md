@@ -9,7 +9,7 @@ Este repositório contém implementações práticas e básicas dos principais *
 [**Facade**](./facade) – Extrair e encapsular complexidade, regras de negócio e fluxo do código para melhorar código do cliente.
 - [ ] Singleton
 - [ ] Strategy
-- [ ] Observer
+[**Observer**](./observer) - Permitir que objetos observadores reajam às mudanças de estado de outro objeto, como uma forma de programação orientada à eventos.
 - [ ] Builder
 - [ ] Factory Method
 - [ ] Abstract Factory
