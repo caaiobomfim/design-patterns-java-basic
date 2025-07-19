@@ -15,7 +15,6 @@ Imagine que trabalhamos em uma empresa de mineração de dados. Os usuários faz
 4. Analisa os dados
 5. Gera um relatório
 6. Envia esse relatório
-7. Fecha o arquivo
 
 Inicialmente, criamos uma classe `DocDataMiner` (v1.0), depois `CSVDataMiner` (v2.0) e por fim `PDFDataMiner` (v3.0). No entanto, todas essas classes seguiam a **mesma estrutura** no método `mine()` e apenas mudavam em como extraíam e parseavam os dados.
 
@@ -29,12 +28,11 @@ Cada classe (Doc, CSV, PDF) implementava o método `mine()` com os mesmos passos
 
 ```java
 public void mine(String path) {
-    File file = openFile(path);
-    String rawData = extractDocData(file);
-    String data = parseDocData(rawData);
-    String analysis = analyzeData(data);
-    sendReport(analysis);
-    closeFile(file);
+    String fileContent = this.openFile(path);
+    List<String> rawData = this.extractCsvData(fileContent);
+    List<String> data = this.parseCsvData(rawData);
+    List<String> analysisResult = this.analyseData(data);
+    sendReport(analysisResult);
 }
 ```
 
@@ -46,20 +44,25 @@ Foi criada uma classe abstrata DataMiner com o método mine() centralizado, cont
 ```bash
 public abstract class DataMiner {
     public final void mine(String path) {
-        File file = openFile(path);
-        String rawData = extractData(file);
-        String data = parseData(rawData);
-        String analysis = analyzeData(data);
-        sendReport(analysis);
-        closeFile(file);
+        String fileContent = this.openFile(path);
+        List<String> rawData = this.extractData(fileContent);
+        List<String> data = this.parseData(rawData);
+        List<String> analysisResult = this.analyseData(data);
+        sendReport(analysisResult);
     }
 
-    protected File openFile(String path) { return new File(path); }
-    protected abstract String extractData(File file);
-    protected abstract String parseData(String rawData);
-    protected String analyzeData(String data) { return "Analysis of: " + data; }
-    protected void sendReport(String report) { System.out.println(report); }
-    protected void closeFile(File file) { System.out.println("File closed."); }
+    protected abstract String openFile(String path);
+    protected abstract List<String> extractData(String fileContent);
+    protected abstract List<String> parseData(List<String> rawData);
+
+    protected List<String> analyseData(List<String> data){
+        System.out.print("ANALYSE");
+        return Collections.singletonList("analysed_data");
+    }
+
+    protected void sendReport(List<String> analysisResult){
+        System.out.print("SEND REPORT");
+    }
 }
 ```
 
@@ -67,8 +70,14 @@ E as classes concretas apenas sobrescrevem os métodos específicos:
 
 ```bash
 public class DocDataMiner extends DataMiner {
-    protected String extractData(File file) { return "DOC raw data"; }
-    protected String parseData(String rawData) { return "Parsed DOC"; }
+    protected List<String> extractData(String fileContent){
+        System.out.print("EXTRACT");
+        return Collections.singletonList("raw_data_doc");
+    }
+    protected List<String> parseData(List<String> rawData){
+        System.out.print("PARSE");
+        return Collections.singletonList("parsed_data_doc");
+    }
 }
 ```
 
